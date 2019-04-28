@@ -21,7 +21,7 @@ function parse_git_branch() {
 	if [ ! "${BRANCH}" == "" ]
 	then
 		STAT=`parse_git_dirty`
-        echo "$(tput setaf 1)[$(tput setaf 2)${BRANCH}$(tput setaf 3)${STAT}$(tput setaf 1)]"
+        echo "\[$(tput setaf 1)\][\[$(tput setaf 2)\]${BRANCH}\[$(tput setaf 3)\]${STAT}\[$(tput setaf 1)\]]"
 	else
 		echo ""
 	fi
