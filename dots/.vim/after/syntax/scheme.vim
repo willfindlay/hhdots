@@ -1,0 +1,1 @@
+hi schemeError ctermbg=none

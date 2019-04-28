@@ -1,0 +1,286 @@
+# set mod key to 'windows key'
+set $mod Mod4
+
+# font for i3-bar
+font pango:Inconsolata-dz for Powerline 7.5
+
+# hold mod and drag windows
+floating_modifier $mod
+
+# set terminal to termite
+exec export TERMINAL=termite
+# start a terminal
+bindsym $mod+Return exec termite
+# start a terminal in most recently opened directory
+bindsym $mod+Shift+Return exec termite -d $(cat ~/.last_dir)
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi (a program launcher)
+#bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -bw 0 -font "System San Francisco Display 20"
+bindsym $mod+d exec dmenu_run
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+# bindsym $mod+Shift+j move left
+# bindsym $mod+Shift+k move down
+# bindsym $mod+Shift+l move up
+# bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# this section disabled
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# this section disabled
+# change focus between tiling / floating windows
+# bindsym $mod+space focus mode_toggle
+
+# this section disabled
+# focus the parent container
+# bindsym $mod+a focus parent
+
+# this section disabled
+# focus the child container
+#bindsym $mod+d focus child
+
+# define monitors
+# comment this out for laptop
+set $main_monitor   DP-4
+set $second_monitor HDMI-0
+
+workspace $ws1  output $main_monitor
+workspace $ws2  output $main_monitor
+workspace $ws3  output $main_monitor
+workspace $ws4  output $main_monitor
+workspace $ws5  output $main_monitor
+workspace $ws6  output $main_monitor
+workspace $ws7  output $second_monitor
+workspace $ws8  output $second_monitor
+workspace $ws9  output $second_monitor
+workspace $ws10 output $second_monitor
+workspace $ws11 output $second_monitor
+workspace $ws12 output $second_monitor
+workspace $wsf1 output $main_monitor
+workspace $wsf2 output $main_monitor
+workspace $wsf3 output $main_monitor
+workspace $wsf4 output $main_monitor
+workspace $wsf5 output $main_monitor
+workspace $wsf6 output $main_monitor
+workspace $wsf7 output $main_monitor
+
+# Workspace names
+set $ws1  "1 "
+set $ws2  "2 "
+set $ws3  "3 "
+set $ws4  "4 "
+set $ws5  "5 "
+set $ws6  "6 "
+set $wsf1 "F1 "
+set $wsf2 "F2 "
+set $wsf3 "F3 "
+set $wsf4 "F4 "
+set $wsf5 "F5 "
+set $wsf6 "F6 "
+set $wsf7 "F7 "
+set $ws7  "7 "
+set $ws8  "8 "
+set $ws9  "9 "
+set $ws10 "10 "
+set $ws11 "11 "
+set $ws12 "12 "
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+minus workspace $ws11
+bindsym $mod+equal workspace $ws12
+bindsym $mod+F1 workspace $wsf1
+bindsym $mod+F2 workspace $wsf2
+bindsym $mod+F3 workspace $wsf3
+bindsym $mod+F4 workspace $wsf4
+bindsym $mod+F5 workspace $wsf5
+bindsym $mod+F6 workspace $wsf6
+bindsym $mod+F7 workspace $wsf7
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+minus move container to workspace $ws11
+bindsym $mod+Shift+equal move container to workspace $ws12
+bindsym $mod+Shift+F1 move container to workspace $wsf1
+bindsym $mod+Shift+F2 move container to workspace $wsf2
+bindsym $mod+Shift+F3 move container to workspace $wsf3
+bindsym $mod+Shift+F4 move container to workspace $wsf4
+bindsym $mod+Shift+F5 move container to workspace $wsf5
+bindsym $mod+Shift+F6 move container to workspace $wsf6
+bindsym $mod+Shift+F7 move container to workspace $wsf7
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# bindsym $mod+Shift+r exec "i3-nagbar -t warning -m 'You pressed the restart i3 shortcut. Do you really want to restart i3?' -b 'Yes' 'i3-msg restart'"
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec i3-msg exit
+bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the power shortcut. Do you really want to shut down?' -b 'Yes' 'i3exit shutdown'"
+bindsym $mod+Shift+t exec "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot?' -b 'Yes' 'i3exit reboot'"
+bindsym $mod+Shift+l exec "i3-nagbar -t warning -m 'You pressed the sleep shortcut. Do you really want to sleep?' -b 'Yes' 'i3exit suspend'"
+bindsym XF86PowerOff exec "i3-nagbar -t warning -m 'You pressed the power button. Do you really want to shut down?' -b 'Yes' 'i3exit shutdown'"
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# set colors
+# clean this up later
+set $bg-color            #969896
+set $inactive-bg-color   #282c34
+set $urgent-bg-color     #282c34
+set $text-color          #ffa200
+set $inactive-text-color #ecd9cb
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          $bg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
+
+# hide all the things
+hide_edge_borders both
+
+
+# bar launcher
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Client assignments
+#   Spotify
+    for_window [class = "Spotify"] move to $ws10
+#   Discord
+    assign [class = "discord"] $ws9
+#   Thunderbird
+    assign [class = "Thunderbird"] $ws8
+#   VM
+    assign [class = "VirtualBox Machine"] $ws11
+    assign [class = "VirtualBox Manager"] $ws11
+# Bind i3lock to mod shift x
+bindsym $mod+shift+x exec i3lock --color "$bg-color"
+
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec volume +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec volume -5% #decrease sound volume
+bindsym XF86AudioMute exec mute # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+
+# Touchpad controls
+bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+bindcode --release 107 exec scrot ~/pictures/screenshots/%m-%d_%H:%M:%S.png
+bindsym --release Mod1+z exec --no-startup-id scrot ~/pictures/screenshots/%m-%d_%H:%M:%S.png -s -d 1
+
+# Disable caps lock
+exec setxkbmap -option caps:none
+
+# Disable focus follows mouse
+#focus_follows_mouse no
+
+# Enable workspace double tap to switch back
+workspace_auto_back_and_forth yes
+
+# Custom wallpaper
+exec_always feh --bg-scale ~/.wallpaper
+
+# Compton for opacity
+exec compton -b --backend glx --vsync opengl-swc
+
+# i3-gaps stuff
+gaps inner 2
+gaps outer 4
+
+# Startup
+exec redshift -l 45.3277070:-75.7878600
+
+# remove title bars
+for_window [class="^.*"] border pixel
+
+exec pia
+exec setleds -D +num
