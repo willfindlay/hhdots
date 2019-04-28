@@ -1,0 +1,37 @@
+[Added Associations]
+inode/directory=ranger;
+x-scheme-handler/mailto=thunderbird.desktop;userapp-Thunderbird-CPUROZ.desktop;
+message/rfc822=thunderbird.desktop;userapp-Thunderbird-CPUROZ.desktop;
+application/x-ms-dos-executable=wine.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/ftp=firefox.desktop;
+x-scheme-handler/chrome=firefox.desktop;
+text/html=firefox.desktop;
+application/x-extension-htm=firefox.desktop;
+application/x-extension-html=firefox.desktop;
+application/x-extension-shtml=firefox.desktop;
+application/xhtml+xml=firefox.desktop;
+application/x-extension-xhtml=firefox.desktop;
+application/x-extension-xht=firefox.desktop;
+application/pdf=firefox.desktop;
+application/epub+zip=firefox.desktop;
+image/png=sxiv.desktop;
+image/jpeg=sxiv.desktop;
+
+[Default Applications]
+x-scheme-handler/mailto=userapp-Thunderbird-CPUROZ.desktop
+message/rfc822=userapp-Thunderbird-CPUROZ.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/ftp=firefox.desktop
+x-scheme-handler/chrome=firefox.desktop
+text/html=firefox.desktop
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
+x-scheme-handler/discord-431872723946438658=discord-431872723946438658.desktop
+x-scheme-handler/discord-378612438200877056=discord-378612438200877056.desktop
