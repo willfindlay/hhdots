@@ -60,7 +60,6 @@ bindsym $mod+f fullscreen toggle
 # bindsym $mod+w layout tabbed
 # bindsym $mod+e layout toggle split
 
-# this section disabled
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -77,6 +76,7 @@ bindsym $mod+Shift+space floating toggle
 #bindsym $mod+d focus child
 
 # define monitors
+# comment this out for laptop
 set $main_monitor   DP-4
 set $second_monitor HDMI-0
 
