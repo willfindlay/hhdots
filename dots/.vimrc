@@ -46,7 +46,10 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = 'ln'
+let g:airline_symbols.dirty = ' !'
+let g:airline_symbols.notexists = ' +'
 
 execute pathogen#infect()
 
@@ -235,7 +238,8 @@ nmap <leader>bn :bn<CR>
 nmap <leader>bp :bp<CR>
 
 " vim terminal stuff
-tnoremap <Esc> <C-\><C-n>
+autocmd WinEnter *:$SHELL startinsert
+autocmd BufEnter *:$SHELL startinsert
 tnoremap <C-W><C-W> <C-\><C-n><C-W><C-W>
 tnoremap <C-W>W <C-\><C-n><C-W><C-W>
 tnoremap <C-W><C-LEFT> <C-\><C-n><C-W>h
