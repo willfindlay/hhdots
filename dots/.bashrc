@@ -96,10 +96,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$PATH:/home/housedhorse/.vim/bundle/vim-live-latex-preview/bin:/home/housedhorse/.local/bin"
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
-export PATH="$PATH:/home/housedhorse/.scripts"
-
 # --My aliases--
 # Aliases for makefile typos
 alias aekm='make'
@@ -187,7 +183,6 @@ export BROWER=firefox
 source ~/.scripts/git-completion.bash
 
 # prompt and directory colors
-#LS_COLORS=$LS_COLORS:'ln=1;34:di=1;36:fi=37:' ; export LS_COLORS
 export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 4)\]\u\[$(tput setaf 4)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\w\[$(tput setaf 1)\]]\[$(tput setaf 2)\]\`parse_git_branch\`\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
 # default image viewer
@@ -204,3 +199,24 @@ function cd_
 }
 
 alias cd='cd_'
+
+# path info
+export PATH="$PATH:/home/housedhorse/.vim/bundle/vim-live-latex-preview/bin:/home/housedhorse/.local/bin"
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+export PATH="$PATH:/home/housedhorse/.scripts"
+
+# colors for manpages
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
+export LESS_TERMCAP_md=$(tput bold; tput setaf 6) # cyan
+export LESS_TERMCAP_me=$(tput sgr0)
+export LESS_TERMCAP_so=$(tput bold; tput setaf 0; tput setab 7) # yellow on blue
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 7) # white
+export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
+export LESS_TERMCAP_mr=$(tput rev)
+export LESS_TERMCAP_mh=$(tput dim)
+export LESS_TERMCAP_ZN=$(tput ssubm)
+export LESS_TERMCAP_ZV=$(tput rsubm)
+export LESS_TERMCAP_ZO=$(tput ssupm)
+export LESS_TERMCAP_ZW=$(tput rsupm)
+
