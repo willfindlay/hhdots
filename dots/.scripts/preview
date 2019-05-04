@@ -1,0 +1,23 @@
+#! /bin/bash
+
+# a script to preview pdf files based on provided filename
+
+file=$(readlink -f "$1")
+dir=$(dirname "$file")
+base="${file%.*}"
+
+open_pdf()
+{
+    # open pdf if not already open
+    if [ $(ps aux | grep -i -c "mupdf.*$base\.pdf") -eq 0 ]; then
+        mupdf "$base.pdf" > /dev/null 2> /dev/null &
+    else
+        echo "Error: PDF already open."
+        exit
+    fi
+}
+
+# get out if we can't find the directory
+cd "$dir" || exit
+
+open_pdf

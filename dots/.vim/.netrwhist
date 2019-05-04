@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/housedhorse/documents/school/COMP3004/3004-project/cuACS'
+let g:netrw_dirhist_2='/home/housedhorse/documents/school/COMP3004/3004-project'
+let g:netrw_dirhist_3='/home/housedhorse/.scripts'
+let g:netrw_dirhist_4='/home/housedhorse/documents/projects/cheats-with-friends/static/css'
+let g:netrw_dirhist_5='/home/housedhorse/.vim/bundle/AutoComplPop/autoload'
+let g:netrw_dirhist_6='/etc/X11/xorg.conf.d'
+let g:netrw_dirhist_7='/home/housedhorse/documents/projects/wfindlay.com/docs/_layouts'
+let g:netrw_dirhist_8='/home/housedhorse/documents/projects/portfolio-analysis'
+let g:netrw_dirhist_9='/home/housedhorse/.config/termite'

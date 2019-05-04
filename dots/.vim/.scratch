@@ -1,0 +1,8 @@
+profiles:
+    - normal
+    - frozen
+    - normal_time
+    - window_size
+    - count
+    - anomalies
+    - filename [128]
