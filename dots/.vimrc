@@ -126,7 +126,7 @@ autocmd FileType rmd,tex,markdown nnoremap <leader>p :silent execute "!preview %
 autocmd BufWritePre * let _save_pos=getpos(".") | let _s=@/ | silent! %s/\s\+$//e | let @/=_s | unlet _s | call setpos('.', _save_pos) | unlet _save_pos | noh
 
 " use actual tab chars in Makefiles.
-autocmd FileType make set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
+autocmd FileType make setlocal tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 
 " load rmarkdown skeleton and navigate to right spot
 autocmd BufNewFile *.rmd :silent execute "r $HOME/.vimskeletons/rmd" | :silent execute "w"
@@ -300,7 +300,8 @@ syntax on
 set clipboard=unnamedplus
 
 " sudo writing
-command W w !sudo tee "%" > /dev/null 2> /dev/null
+command Sudowrite w !sudo tee "%" > /dev/null 2> /dev/null
+command W w
 
 " clear search on pressing escape
 nnoremap <esc> :noh<return><esc>
